@@ -1,3 +1,3 @@
 [submodule "copykitt-infra"]
 	path = copykitt-infra
-	url = /copykitt-infra
+	url = ../copykitt/copykitt-infra
