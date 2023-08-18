@@ -2,11 +2,19 @@ from typing import Union
 from fastapi import FastAPI, HTTPException
 from mangum import Mangum
 from copykitt import generate_keywords, generate_branding_snippet
-
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 handler = Mangum(app)
 MAX_INPUT_LENGTH = 32
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # @app.get("/")
 # def read_root():
